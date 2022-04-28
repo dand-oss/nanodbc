@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(nanodbc CXX)
 
+###############
+# ASI default settings
+list(APPEND CMAKE_MODULE_PATH "$ENV{ASV_CMAKE}")
+include(asv_cmake_defaults)
+asv_cmake_defaults( )
+###############
+
 # NOTE: All options follow CMake convention:
 #       If no initial value is provided, OFF is used.
 
