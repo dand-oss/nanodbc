@@ -12,13 +12,13 @@ asv_cmake_defaults( )
 #       If no initial value is provided, OFF is used.
 
 # CMake standard options
-option(BUILD_SHARED_LIBS "Build shared library" OFF)
+option(BUILD_SHARED_LIBS "Build shared library" ON)
 # nanodbc specific options
 option(NANODBC_DISABLE_ASYNC "Disable async features entirely" OFF)
-option(NANODBC_DISABLE_EXAMPLES "Do not build examples" OFF)
+option(NANODBC_DISABLE_EXAMPLES "Do not build examples" ON)
 option(NANODBC_DISABLE_INSTALL "Do not generate install target" OFF)
 option(NANODBC_DISABLE_LIBCXX "Do not use libc++, if available." OFF)
-option(NANODBC_DISABLE_TESTS "Do not build tests" OFF)
+option(NANODBC_DISABLE_TESTS "Do not build tests" ON)
 option(NANODBC_DISABLE_MSSQL_TVP "Do not use MSSQL Table-valued parameter" OFF)
 option(NANODBC_ENABLE_COVERAGE "Enable test coverage reporting for GCC/clang" OFF)
 option(NANODBC_ENABLE_BOOST "Use Boost for Unicode string convertions (requires Boost.Locale)" OFF)
