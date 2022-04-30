@@ -238,8 +238,13 @@ endif()
 if(BUILD_SHARED_LIBS)
   set_target_properties(nanodbc PROPERTIES
     VERSION ${NANODBC_VERSION})
-    # export all symobols from windows DLL
-    set_target_properties(nanodbc PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+    if(UNIX)
+        # force linker to resolve all deps
+        set_target_properties(nanodbc PROPERTIES LINK_FLAGS "-Wl,--no-undefined")
+    else(UNIX) # windows
+        # export all symobols from windows DLL
+        set_target_properties(nanodbc PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+    endif(UNIX)
 endif()
 
 target_compile_definitions(nanodbc
