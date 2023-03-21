@@ -249,7 +249,7 @@ if(BUILD_SHARED_LIBS)
         # force linker to resolve all deps
         set_target_properties(nanodbc PROPERTIES LINK_FLAGS "-Wl,--no-undefined")
     else(UNIX) # windows
-        # export all symobols from windows DLL
+        # export all symbols from windows DLL
         set_target_properties(nanodbc PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
         install_pdb(nanodbc)
     endif(UNIX)
